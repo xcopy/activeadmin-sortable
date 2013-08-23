@@ -19,7 +19,7 @@ end
 
 #### Mongoid
 
-[mongoid_orderable](https://github.com/pyromaniac/mongoid_orderable) for **Mongoid**
+[mongoid_orderable](https://github.com/pyromaniac/mongoid_orderable)
 
 ```ruby
 class Page < ActiveRecord::Base
