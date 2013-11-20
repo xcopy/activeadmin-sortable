@@ -5,13 +5,26 @@ sortable via a drag-and-drop interface.
 
 ## Prerequisites
 
-This extension assumes that you're using 
-[acts_as_list](https://github.com/rails/acts_as_list) on any model you want to 
-be sortable.
+This extension assumes that you're using one of the following on any model you want to be sortable.
+
+#### ActiveRecord
+
+[acts_as_list](https://github.com/rails/acts_as_list)
 
 ```ruby
 class Page < ActiveRecord::Base
   acts_as_list
+end
+```
+
+#### Mongoid
+
+[mongoid_orderable](https://github.com/pyromaniac/mongoid_orderable)
+
+```ruby
+class Page < ActiveRecord::Base
+  include Mongoid::Orderable
+  orderable
 end
 ```
 
