@@ -18,5 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'activeadmin', '>= 0.4'
+  # todo
+  # gem.add_dependency 'acts_as_list'
   gem.add_dependency 'js-routes'
 end

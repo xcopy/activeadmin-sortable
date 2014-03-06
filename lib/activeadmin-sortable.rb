@@ -7,13 +7,26 @@ module ActiveAdmin
     module ControllerActions
       def sortable
         collection_action :reorder, :method => :post do
+          # parse query string
           parsed_query_string = Rack::Utils.parse_nested_query(params[:qs])
+
+          # get first element of the hash (aka resource singular name)
           key = parsed_query_string.first[0]
+
+          # classify constantize resource name
           resource = key.classify.constantize
 
+          positions = Hash.new
+
+          # update positions
           parsed_query_string[key].each_with_index { |id, position|
             resource.update(id, { position: position })
+            positions[position] = id
           }
+
+          # todo
+          # render reordered positions
+          render json: positions
         end
       end
     end
